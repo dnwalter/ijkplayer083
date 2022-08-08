@@ -39,6 +39,7 @@ import tv.danmaku.ijk.media.example.application.Settings;
 import tv.danmaku.ijk.media.example.fragments.TracksFragment;
 import tv.danmaku.ijk.media.example.services.MediaPlayerService;
 import tv.danmaku.ijk.media.example.widget.media.AndroidMediaController;
+import tv.danmaku.ijk.media.example.widget.media.EboMediaController;
 import tv.danmaku.ijk.media.example.widget.media.EboVideoView;
 import tv.danmaku.ijk.media.example.widget.media.IjkVideoView;
 import tv.danmaku.ijk.media.example.widget.media.MeasureHelper;
@@ -49,7 +50,6 @@ public class VideoNetActivity extends AppCompatActivity {
 
     private Uri    mVideoUri;
 
-    private AndroidMediaController mMediaController;
     private EboVideoView mVideoView;
     private TextView mToastTextView;
     private DrawerLayout mDrawerLayout;
@@ -86,10 +86,6 @@ public class VideoNetActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ActionBar actionBar = getSupportActionBar();
-        mMediaController = new AndroidMediaController(this, false);
-        mMediaController.setSupportActionBar(actionBar);
-
         mToastTextView = (TextView) findViewById(R.id.toast_text_view);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mRightDrawer = (ViewGroup) findViewById(R.id.right_drawer);
@@ -101,7 +97,8 @@ public class VideoNetActivity extends AppCompatActivity {
         IjkMediaPlayer.native_profileBegin("libijkplayer.so");
 
         mVideoView = (EboVideoView) findViewById(R.id.video_view);
-        mVideoView.setMediaController(mMediaController);
+        EboMediaController mediaController = (EboMediaController) findViewById(R.id.media_controller);
+        mVideoView.setMediaController(mediaController);
 
         mVideoView.setVideoURI(mVideoUri);
         mVideoView.start();
