@@ -80,7 +80,7 @@ public class VideoNetActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String intentAction = intent.getAction();
 
-        mVideoUri = Uri.parse("https://ebofirmware.s3.ap-east-1.amazonaws.com/play-ebo/EBO%20SE/1-EBO%20SE-%E5%8C%85%E8%A3%85%E5%B1%95%E7%A4%BA.mp4");
+        mVideoUri = Uri.parse("https://b08f09b72be34d03ac8f4c09cee4fade.oss-cnbj01.cdsgss.com/testing-ebo/play-ebo/EBO%20SE/1-EBO%20SE-%E5%8C%85%E8%A3%85%E5%B1%95%E7%A4%BA.mp4");
 
         // init UI
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

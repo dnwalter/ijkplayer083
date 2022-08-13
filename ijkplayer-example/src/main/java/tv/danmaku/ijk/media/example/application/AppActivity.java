@@ -88,10 +88,12 @@ public class AppActivity extends AppCompatActivity {
             SettingsActivity.intentTo(this);
             return true;
         } else if (id == R.id.action_recent) {
-            RecentMediaActivity.intentTo(this);
+            // todo ousy
+//            RecentMediaActivity.intentTo(this);
+            startActivity(new Intent(this, VideoNetActivity.class));
         } else if (id == R.id.action_sample) {
             //            SampleMediaActivity.intentTo(this); todo ousy
-            startActivity(new Intent(this, VideoNetActivity.class));
+            startActivity(new Intent(this, VideoNetxActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
