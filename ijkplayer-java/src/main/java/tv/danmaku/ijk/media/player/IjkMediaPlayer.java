@@ -997,6 +997,9 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
                 }
 
                 // DebugLog.efmt(TAG, "Buffer (%d%%) %d/%d",  percent, bufferPosition, duration);
+                Log.e("ousyxx", "bufferPosition:" + bufferPosition);
+                Log.e("ousyxx", "duration:" + duration);
+                Log.e("ousyxx", "percent:" + percent);
                 player.notifyOnBufferingUpdate((int)percent);
                 return;
 
